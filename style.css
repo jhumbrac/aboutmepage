@@ -58,13 +58,40 @@ span {
     font-family:"Swiss Outlines", "Swiss Condensed", sans-serif;
 }
 .cta {
-    background: #f63b34;
+    /* background: #f63b34; */
     box-shadow:1px 1px 3px rgba(0,0,0,.25);
     color:#fff;
     display: inline-block;
     padding:1em 2em;
     margin: 4em 4em 0 0;
     text-decoration:none;
+    position: relative;
+    overflow: hidden;
+}
+.cta:before, .cta:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    transition: all 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
+}
+.cta:before {
+    background: #f63b34;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index:-2;
+}
+.cta:after {
+    background: purple;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.cta:hover:after {
+    right:0;
 }
 .icon {
     fill:#fff;
