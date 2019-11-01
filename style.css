@@ -117,11 +117,50 @@ address {
     padding:0;
     position: relative;
 }
-#intro img {
+.introImg {
     float:right;
     width:50%;
+    position: relative;
 }
-#intro div {
+.introImg img {
+    display:block;
+    width:100%;
+}
+.me {
+    position:absolute;
+    bottom:2em;
+    left:1em;
+    transform:rotate(-15deg);
+    animation: shake 10s;
+    animation-delay: 5s;
+  /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(-15deg); }
+  1% { transform:  rotate(-19deg); }
+  2% { transform:  rotate(-11deg); }
+  3% { transform: rotate(-19deg); }
+  4% { transform: rotate(-11deg); }
+  5% { transform: rotate(-19deg); }
+  6% { transform:  rotate(-11deg); }
+  7% { transform: rotate(-19deg); }
+  8% { transform: rotate(-11deg); }
+  9% { transform: rotate(-19deg); }
+  10% { transform:  rotate(-15deg); }
+  100% { transform: rotate(-15deg); }
+}
+.notMe {
+    font-size:.5em;
+    color:rgba(0,0,0,.85);
+    position:absolute;
+    right: 5em;
+    top: 4em;
+    transform: rotate(15deg);
+    text-shadow: initial;
+}
+.introText {
     position:absolute;
     top:50%;
     left:25%;
@@ -178,7 +217,7 @@ address {
     width: 50%;
     float: left;
 }
-.marcusText, .eddieText {
+.marcusText, .eddieText, .introImg {
     font-size: 3em;
     color:#fff;
     text-shadow: 1px 1px 2px rgba(0,0,0,.5);
@@ -189,19 +228,22 @@ address {
     right: .5em;
     z-index:1;
 }
-.marcusText .arrow {
+.marcusText .arrow, .notMe .arrow {
     fill: #fff;
     width: 1.5em;
     display: block;
     margin-left: auto;
     margin-right: .25em;
 }
+.notMe .arrow {
+    fill:rgba(0,0,0,.85);
+}
 .eddieText {
     position:absolute;
     bottom: 1em;
     left: 0.5em;
 }
-.eddieText .arrow {
+.eddieText .arrow, .me .arrow {
     fill: #fff;
     width: 1.5em;
     display: block;
@@ -259,7 +301,7 @@ form {
     width:50%;
 }
 input,textarea {
-    background: rgba(255,255,255,.85);
+    background: rgb(255, 255, 255);
     display:block;
     padding:1em;
     border:1px solid;
@@ -270,7 +312,7 @@ textarea {
     height:10em;
 }
 label {
-    color: rgba(0,0,0,.85);
+    color: rgba(0,0,0,.4);
     cursor: text;
     display:inline-block;
     position:absolute;
