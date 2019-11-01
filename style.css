@@ -60,6 +60,7 @@ span {
 button {
     background: none;
     border:none;
+    cursor: pointer;
     font: inherit;
     outline:none;
 }
@@ -99,7 +100,7 @@ button.cta {
     bottom: 0;
     z-index: -1;
 }
-.cta:hover:after {
+.cta:hover:after,.cta:focus:after {
     right:0;
 }
 .icon {
@@ -263,18 +264,26 @@ input,textarea {
     padding:1em;
     border:1px solid;
     font:inherit;
-    margin-bottom:2em;
     width:100%;
 }
 textarea {
     height:10em;
 }
-input[type="submit"] {
-    background: #f63b34;
+label {
+    color: rgba(0,0,0,.85);
+    cursor: text;
+    display:inline-block;
+    position:absolute;
+    top: 1em;
+    left: 1em;
+}
+input:focus + label, textarea:focus + label, input:valid + label, textarea:valid + label  {
+    top:-1.5em;
     color: #fff;
-    border: none;
-    cursor: pointer;
-    width: 50%;
+}
+form > div {
+    margin-bottom: 2.5em;
+    position:relative;
 }
 footer > div {
     float:left;
