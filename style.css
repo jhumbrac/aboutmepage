@@ -10,7 +10,7 @@
     font-family: "Swiss Outlines";
     src: url("fonts/SwissBTBolConOut.woff") format("woff");
 }
-* { margin:0; padding:0; box-sizing:border-box; 
+*, *:before, *:after { margin:0; padding:0; box-sizing:border-box; 
     transition: all 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
     transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
 }
@@ -53,27 +53,36 @@ h3 {
     margin-top:1em;
 }
 img { display:block; }
-ul { list-style-type:none; }
+ul {margin-left: 6px;list-style-type:none;}
 span {
     font-family:"Swiss Outlines", "Swiss Condensed", sans-serif;
+}
+button {
+    background: none;
+    border:none;
+    font: inherit;
+    outline:none;
+}
+button.cta {
+    margin: 0;
+    padding: 1.5em 3em;
 }
 .cta {
     /* background: #f63b34; */
     box-shadow:1px 1px 3px rgba(0,0,0,.25);
     color:#fff;
     display: inline-block;
-    padding:1em 2em;
+    padding:2em 4em;
     margin: 4em 4em 0 0;
     text-decoration:none;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 .cta:before, .cta:after {
     content:"";
     position:absolute;
     width:100%;
-    transition: all 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
-    transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
 }
 .cta:before {
     background: #f63b34;
@@ -129,6 +138,7 @@ address {
 .dotted {
     border-top: 4px dotted #2f3290;
     display: block;
+    z-index: 1;
 }
 .dotted:first-of-type {
     position:absolute;
@@ -202,8 +212,11 @@ address {
     text-align: right;
 }
 #portfolio > div {
-    margin-top:8em;
+    margin-top:2em;
     position: relative;
+}
+#portfolio > div + div {
+    margin-top:8em;
 }
 #portfolio h2 {
     text-align:center;
