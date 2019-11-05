@@ -115,8 +115,9 @@ li:nth-of-type(2) .icon, li:nth-of-type(3) .icon {
 address {
     display:inline-block;
 }
+address span { font-family:"Swiss Med", sans-serif; }
 #intro {
-    background:rgba(10, 14, 125, 0.85);
+    background: #091f6a;
     color:#fff;
     padding:0;
     position: relative;
@@ -132,8 +133,8 @@ address {
 }
 .me {
     position:absolute;
-    bottom:2em;
-    left:1em;
+    bottom: 10%;
+    left: 5%;
     transform:rotate(-15deg);
     animation: shake 10s;
     animation-delay: 5s;
@@ -159,8 +160,8 @@ address {
     font-size:.5em;
     color:rgba(0,0,0,.85);
     position:absolute;
-    right: 5em;
-    top: 4em;
+    right: 20%;
+    top: 20%;
     transform: rotate(15deg);
     text-shadow: initial;
 }
@@ -169,6 +170,7 @@ address {
     top:50%;
     left:25%;
     transform:translate(-50%, -50%);
+    z-index:2;
 }
 #aboutMe {
     max-width:40em;
@@ -180,7 +182,7 @@ address {
     font-size:2em;
 }
 .dotted {
-    border-top: 4px dotted #2f3290;
+    border-top: 4px dotted #091f6a;
     display: block;
     z-index: 1;
 }
@@ -211,10 +213,12 @@ address {
     width:100%;
 }
 .dogsText {
+    background: #fff;
     position:absolute;
     left:75%;
     top:50%;
     transform:translate(-50%,-50%);
+    z-index: 1;
 }
 .imgOverlay {
     position:relative;
@@ -228,8 +232,8 @@ address {
 }
 .marcusText {
     position:absolute;
-    top: .5em;
-    right: .5em;
+    top: 4%;
+    right: 2%;
     z-index:1;
 }
 .marcusText .arrow, .notMe .arrow {
@@ -244,8 +248,8 @@ address {
 }
 .eddieText {
     position:absolute;
-    bottom: 1em;
-    left: 0.5em;
+    bottom: 5%;
+    left: 3%;
 }
 .eddieText .arrow, .me .arrow {
     fill: #fff;
@@ -354,4 +358,150 @@ footer > div > * {
     content:"";
     clear:both;
     display:block;
+}
+
+@media only screen and (max-width:1180px) {
+    .marcusText, .eddieText, .introImg {
+      font-size:2em;
+    }
+    .dogsText {
+      left:50%;
+      transform:translate(0, -50%);
+      padding: 0 2em;
+      width:50%;
+    }
+    #portfolio h3 {
+      font-size:1.5em;
+    }
+}
+@media only screen and (max-width:1000px) {
+    nav {
+      background: #091f6a;
+      position:relative;
+      width:100%;
+    }
+    nav:after {
+      content:"";
+      clear:both;
+      display:block;
+    }
+    nav a {
+      border-bottom:none;
+    }
+    .dotted { display:none; }
+    .introText {
+      top:initial;
+      left:initial;
+      bottom:1em;
+      right:1em;
+      transform:initial;
+      text-shadow:1px 1px 2px rgba(0,0,0,.25);
+    }
+    .introImg {
+      width:100%;
+    }
+    #portfolio img {
+      float:none;
+      width:100%;
+    }
+    #portfolio h3 {
+      font-size: 2em;
+      position:initial;
+      transform:initial;
+      text-align: left;
+      width: 100%;
+    }
+    .contactText {
+      padding:4em 2em;
+      position:relative;
+      left: 0;
+      top: 0;
+      transform: initial;
+      max-width: 420px;
+      margin: auto;
+    }
+    form {
+      float:none;
+      width:100%;
+    }
+}
+@media only screen and (max-width:770px) {
+    #aboutMe {
+      padding:8em 2em;
+    }
+    .dogsText {
+      margin-bottom: 2em;
+      position:initial;
+      transform: initial;
+      width:100%;
+    }
+    .imgOverlay {
+      width:100%;
+    }
+    footer > div > * {
+    width: 100%;
+    left: 0;
+    text-align: center;
+    transform: translate(0, -50%);
+    }
+}
+@media only screen and (max-width:620px) {
+    .me {
+      bottom: 34%;
+    }
+    .cta {
+      margin:4em 2em 0 0;
+    }
+    .contactText {
+      position:initial;
+    }
+    form {
+      padding:4em 2em;
+    }
+}
+@media only screen and (max-width:510px) {
+    .introText {
+      text-align:right;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    body {
+        font-size:16px;
+    }
+    h2 {
+        font-size:3em;
+    }
+    .introText {
+      padding:2em;
+      position:initial;
+      text-align:left;
+    }
+    .me, .notMe {
+        display:none;
+    }
+    .introText, #aboutMe, .contactText, form {
+        padding:4em 1em;
+    }
+    .dogsText {
+        padding:4em 1em 0;
+    }
+    #portfolio h3 {
+        padding:0 .5em;
+        text-align: center;
+    }
+    .cta {
+        display: block;
+        text-align: center;
+        margin: 4em 1em 0;
+        padding: 2em .5em;
+    }
+}
+@media only screen and (max-width:345px) {
+    address span {
+        display:block;
+    }
+    .addressIcon .icon {
+        vertical-align: super;
+    }
 }
